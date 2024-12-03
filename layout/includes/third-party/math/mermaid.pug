@@ -1,16 +1,22 @@
 script.
   (() => {
-    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap, #article-container .mermaid')
     if ($mermaid.length === 0) return
     const runMermaid = () => {
       window.loadMermaid = true
       const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? '!{theme.mermaid.theme.dark}' : '!{theme.mermaid.theme.light}'
 
+      const mermaidConfig = {
+        startOnLoad: true,
+        theme: theme
+      };
+      mermaid.initialize(mermaidConfig);
+
       Array.from($mermaid).forEach((item, index) => {
+        item.style.background = 'unset';
         const mermaidSrc = item.firstElementChild
-        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
         const mermaidID = 'mermaid-' + index
-        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        const mermaidDefinition = mermaidSrc.textContent
 
         const renderFn = mermaid.render(mermaidID, mermaidDefinition)
 
