@@ -105,9 +105,9 @@
                   span.site-card-tag(style=`background-color: ${color}`) #[=tag]
                 else if item.recommend
                   span.site-card-tag=_p('flink.recommend')
-                a.img.no-text-decoration(target='_blank', title=`${item.name}`, href=`${item.link}`, rel='external nofollow')
+                a.img.no-text-decoration(target='_blank', title=`${item.name}`, href=`${item.link}`, rel='external')
                   img.flink-avatar(data-lazy-src=siteshot, onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=item.name, style="pointer-events: none;", src=`${siteshot}`)
-                a.info.cf-friends-link.no-text-decoration(target='_blank', title=`${item.name}`, href=`${item.link}`, cf-href=url_for(item.link), rel='external nofollow')
+                a.info.cf-friends-link.no-text-decoration(target='_blank', title=`${item.name}`, href=`${item.link}`, cf-href=url_for(item.link), rel='external')
                   .site-card-avatar
                     img.flink-avatar.cf-friends-avatar.no-fancybox(data-lazy-src=item.avatar, cf-src=url_for(item.avatar), onerror=`this.onerror=null;this.src='${theme.default_img}'`, alt=item.name, src=item.avatar)
                   .site-card-text
