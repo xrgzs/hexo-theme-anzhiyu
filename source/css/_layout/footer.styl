@@ -16,6 +16,88 @@
       background-color: alpha($dark-black, .5)
       content: ''
 
+  .footer-flink-name
+    color: var(--anzhiyu-fontcolor);
+    font-size: 1rem;
+    font-weight: bold;
+    &:hover
+      color: var(--anzhiyu-theme);
+
+  .anzhiyu-flink-list
+    overflow: auto
+    margin: -6px
+    text-align: center
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    
+    .img-alt
+      display: none
+    
+    .flink-list-item
+      margin: 6px
+      transition: 0.3s ease-in-out
+      border-radius: 12px
+      position: relative
+      flex-grow: 0
+      flex-shrink: 0
+      border: var(--style-border)
+      box-shadow: var(--anzhiyu-shadow-border)
+      background: var(--anzhiyu-card-bg)
+      display: flex
+      overflow: hidden
+      line-height: 17px
+      
+      .cf-friends-link
+        display: flex
+        width: 100%
+        align-items: center
+        color: var(--anzhiyu-fontcolor)
+        text-decoration: none
+        font-weight: bold
+        padding: 0 4px
+        
+        img
+          border-radius: 32px
+          margin: 5px 10px 5px 5px
+          transition: 0.3s
+          background: var(--anzhiyu-background)
+          width: 30px
+          height: 30px
+          object-fit: cover
+      
+      .flink-item-info
+        display: flex
+        flex-direction: column
+        justify-content: center
+        
+        .flink-item-name
+          text-align: left
+          line-height: 20px
+          color: var(--anzhiyu-fontcolor)
+          padding-right: 10px
+          font-weight: 700
+          font-size: 14px
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+      
+      &:hover
+        background: var(--anzhiyu-theme)
+        border: var(--style-border-hover)
+        box-shadow: var(--anzhiyu-shadow-main)
+        
+        a 
+          .flink-item-name
+            color: var(--anzhiyu-white)
+          
+      //     img 
+      //       width: 0
+      //       height: 0
+      //       opacity: 0
+      //       margin: 0.5rem
+      //       transition: 0.6s
+
 #footer-bar
   padding: 1rem;
   color: var(--anzhiyu-fontcolor);
@@ -63,7 +145,7 @@
 #footer-wrap
   position: relative
   if hexo-config('footer.footerBar') && hexo-config('footer.footerBar.enable')
-    padding: 40px 20px 0
+    padding: 0 20px 0
   else 
     padding: 40px 20px
   color: var(--light-grey)

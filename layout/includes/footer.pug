@@ -64,6 +64,22 @@
         a.github-badge(target='_blank' href=item.link style='margin-inline:5px' data-title=item.message title=item.message)
           img(src=item.shields alt=item.message)
 
+  if site.data.link
+    p
+      a.footer-flink-name(href=url_for("https://www.xrgzs.top/link/")) 友情链接
+    .anzhiyu-flink-list
+      each i in site.data.link
+        each item in i.link_list
+          .flink-list-item
+            .cf-friends-link
+              a.cf-friends-link(href=url_for(item.link) title=item.descr target="_blank")
+                if theme.lazyload.enable
+                  img.no-lightbox(data-lazy-src=url_for(item.avatar) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=item.name )
+                else
+                  img.cf-friends-avatar.no-lightbox(src=url_for(item.avatar) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt=item.name )
+                .flink-item-info
+                  .flink-item-name.cf-friends-name-lost-contact= item.name
+
 if theme.footer.footerBar && theme.footer.footerBar.enable
   #footer-bar
     .footer-bar-links
