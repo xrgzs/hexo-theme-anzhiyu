@@ -119,11 +119,11 @@ div#category {
   a:not([data-fancybox="gallery"]):not(.headerlink):not(.cf-friends-link):not(.tag-Link):not(.btn-anzhiyu):not(
     .no-text-decoration
   ) {
-  font-weight: 500;
   border-bottom: solid 2px var(--anzhiyu-lighttext);
   color: var(--anzhiyu-fontcolor);
   padding: 0 0.2em;
   text-decoration: none;
+  font-weight: inherit;
   font-family: inherit;
 }
 #article-container
@@ -213,4 +213,93 @@ html.hide-aside .layout > div:first-child {
   to {
     opacity: 1;
   }
+}
+
+
+/* 导航栏毛玻璃 */
+#page-header.nav-fixed #nav {
+  backdrop-filter: blur(20px);
+}
+
+/* 移动端分类栏毛玻璃 */
+@media screen and (max-width: 768px) {
+  [data-theme="dark"] #category-bar.category-bar {
+    backdrop-filter: blur(20px);
+    background: var(--anzhiyu-card-bg);
+  }
+}
+
+/* PC端导航栏透明 */
+[data-theme='dark'] #page-header.nav-fixed>#nav,
+[data-theme='dark'] #page-header.not-top-img>#nav {
+  background: var(--anzhiyu-card-bg);
+}
+
+/* 侧边栏透明+毛玻璃 */
+#sidebar #sidebar-menus {
+  backdrop-filter: blur(20px);
+  background: var(--anzhiyu-card-bg);
+}
+
+/* 搜索毛玻璃 */
+.search-dialog {
+  backdrop-filter: blur(20px);
+}
+
+/* 搜索背景毛玻璃 */
+#search-mask {
+  backdrop-filter: blur(20px);
+}
+
+/* 字体颜色渐变 */
+/* b, strong {
+	background-image: -webkit-gradient(linear, left center, right center, from(#ED52F4), to(#2696DF));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+} */
+
+
+/* 颜色 */
+
+/* 浅色背景透明 */
+[data-theme="light"] {
+  --anzhiyu-card-bg: #fffc;
+}
+
+/* 深色背景透明 */
+[data-theme="dark"] {
+  --anzhiyu-lighttext: var(--anzhiyu-main);
+  --anzhiyu-card-bg: #1d1e22bb;
+}
+
+/* 引用左边条 */
+#post-comment blockquote {
+  border-left: 3px solid var(--anzhiyu-main);
+}
+
+/* fancybox */
+.fancybox__container {
+  --fancybox-bg: #000c;
+}
+.fancybox__backdrop {
+  backdrop-filter: blur(20px);
+}
+
+/* 隐藏友链界面上方滚屏 */
+#skills-tags-group-all {
+  display: none;
+}
+
+/* 隐藏评论系统名称 */
+.tk-footer {
+  display: none;
+}
+
+/* Punctuation SC 字体，用于解决中文标点符号问题 */
+@font-face {
+  font-family: "Punctuation SC";
+  src: local("HarmonyOS Sans SC"), local("PingFang SC Regular"),
+    local("Noto Sans CJK SC"), local("Microsoft YaHei");
+  unicode-range: U+201C, U+201D, U+2018, U+2019, U+2E3A, U+2014, U+2013, U+2026,
+    U+00B7, U+007E, U+002F;
 }
