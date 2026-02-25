@@ -43,11 +43,13 @@
           display: none
     .author-info__bottom-group
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
       width: 100%;
       align-items: center;
       .author-info__name
-        text-align: left;
+        text-align: center;
         font-weight: 700;
         color: var(--anzhiyu-white);
         font-size: 20px;
@@ -55,6 +57,7 @@
         margin-bottom: 5px;
         margin-top: 0
       .author-info__desc
+        text-align: center;
         font-size: 12px;
         color: var(--anzhiyu-white);
         opacity: .6;
@@ -109,13 +112,13 @@
     .card-info-social-icons
       margin: 0;
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-center;
       flex-direction: row;
       flex-wrap: wrap;
       cursor: pointer;
+      gap: 10px;
 
       .social-icon
-        margin: 0 0 0 10px
         color: var(--anzhiyu-fontcolor);
         font-size: 1.4em;
         cursor: pointer;
@@ -561,7 +564,7 @@ if hexo-config('aside.enable')
           transform: scale(0);
 
       .author-info-avatar
-        margin: 45px auto
+        margin: 30px auto
         display: flex
         justify-content: center
         width: 118px;
